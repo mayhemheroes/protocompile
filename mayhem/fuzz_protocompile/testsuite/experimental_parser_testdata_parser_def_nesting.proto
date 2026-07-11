@@ -1,0 +1,43 @@
+syntax = "proto2";
+
+package test;
+
+message M {
+    message M {}
+    enum E {}
+    service S {}
+    extend E {}
+    oneof O {}
+}
+
+enum E {
+    message M {}
+    enum E {}
+    service S {}
+    extend E {}
+    oneof O {}
+}
+
+service S {
+    message M {}
+    enum E {}
+    service S {}
+    extend E {}
+    oneof O {}
+}
+
+extend E {
+    message M {}
+    enum E {}
+    service S {}
+    extend E {}
+    oneof O {}
+}
+
+oneof O {
+    message M {}
+    enum E {}
+    service S {}
+    extend E {}
+    oneof O {}
+}

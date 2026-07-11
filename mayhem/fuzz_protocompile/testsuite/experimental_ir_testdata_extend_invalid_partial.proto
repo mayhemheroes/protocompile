@@ -1,0 +1,15 @@
+//% descriptor: true
+syntax = "proto2";
+
+package test;
+
+message M {
+    message N {
+        extensions 1;
+    }
+    message M {
+        extend M.N {
+            optional int32 x = 1;
+        };
+    }
+}

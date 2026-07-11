@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package test;
+
+import public weak "foo.proto";
+import public option "foo.proto";
+import weak option "foo.proto";
+import option weak public "foo.proto";
+import weak weak "foo.proto";
+import export "foo.proto";

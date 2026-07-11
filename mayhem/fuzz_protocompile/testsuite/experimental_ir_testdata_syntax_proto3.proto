@@ -1,0 +1,4 @@
+//% descriptor: true
+syntax = "proto3";
+
+package buf.test;

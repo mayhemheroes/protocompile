@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package test;
+
+message Foo {
+    enum Bar { BAZ = 0; }
+
+    x x = 1;
+    BAZ y = 2;
+    test z = 3;
+
+    oneof self {
+        self a = 4;
+    }
+}

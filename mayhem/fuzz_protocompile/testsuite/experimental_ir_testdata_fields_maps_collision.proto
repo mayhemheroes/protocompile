@@ -1,0 +1,15 @@
+//% descriptor: true
+syntax = "proto3";
+
+package test;
+
+message Foo {
+    map<int32, int32> foo_bar = 1;
+
+    message FooBarEntry {}
+}
+
+message Underscores {
+    map<int32, int32> _ = 1;
+    map<int32, int32> __ = 2;
+}

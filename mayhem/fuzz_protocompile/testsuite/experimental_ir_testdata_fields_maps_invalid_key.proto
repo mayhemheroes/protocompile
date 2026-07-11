@@ -1,0 +1,16 @@
+//% descriptor: true
+syntax = "proto3";
+
+package test;
+
+message Foo {
+    map<float, int32> m1 = 1;
+    map<double, int32> m2 = 2;
+    map<bytes, int32> m3 = 3;
+    map<Foo, int32> m4 = 4;
+    map<Enum, int32> m5 = 5;
+}
+
+enum Enum {
+    Z = 0;
+}

@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package buf.test;
+
+message M {
+    optional string foo = 1 [ctype = STRING];
+    optional string bar = 2 [ctype = CORD];
+    optional string baz = 3 [ctype = STRING_PIECE];
+
+    optional int32 i = 4 [ctype = CORD];
+
+    extensions 5;
+}
+
+extend M {
+    optional string x = 5 [ctype = CORD];
+}

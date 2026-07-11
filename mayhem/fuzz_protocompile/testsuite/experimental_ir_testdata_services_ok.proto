@@ -1,0 +1,14 @@
+//% descriptor: true
+syntax = "proto2";
+
+package buf.test;
+
+message M {}
+message N {}
+
+service S {
+    rpc M1(M) returns (N);
+    rpc M2(stream M) returns (N);
+    rpc M3(M) returns (stream N);
+    rpc M4(stream M) returns (stream N);
+}

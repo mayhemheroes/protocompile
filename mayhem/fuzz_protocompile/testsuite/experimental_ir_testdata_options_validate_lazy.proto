@@ -1,0 +1,33 @@
+edition = "2023";
+
+package buf.test;
+
+option features.message_encoding = DELIMITED;
+
+message M {
+    M m1 = 1 [lazy = true];
+    M m2 = 2 [unverified_lazy = true];
+
+    M m3 = 3 [lazy = true, features.message_encoding = DELIMITED];
+    M m4 = 4 [unverified_lazy = true, features.message_encoding = DELIMITED];
+
+    M m5 = 5 [lazy = true, features.message_encoding = LENGTH_PREFIXED];
+    M m6 = 6 [unverified_lazy = true, features.message_encoding = LENGTH_PREFIXED];
+
+    int32 x1 = 7 [lazy = true];
+    int32 x2 = 8 [unverified_lazy = true];
+}
+
+message M2 {
+    M m1 = 1 [lazy = false];
+    M m2 = 2 [unverified_lazy = false];
+
+    M m3 = 3 [lazy = false, features.message_encoding = DELIMITED];
+    M m4 = 4 [unverified_lazy = false, features.message_encoding = DELIMITED];
+
+    M m5 = 5 [lazy = false, features.message_encoding = LENGTH_PREFIXED];
+    M m6 = 6 [unverified_lazy = false, features.message_encoding = LENGTH_PREFIXED];
+
+    int32 x1 = 7 [lazy = false];
+    int32 x2 = 8 [unverified_lazy = false];
+}

@@ -1,0 +1,32 @@
+//% descriptor: true
+syntax = "proto2";
+
+package google.protobuf.test; // To make sure early option rez works correctly.
+
+import "google/protobuf/descriptor.proto";
+
+message M1 {
+    option message_set_wire_format = true;
+}
+
+message M2 {
+    option (MessageOptions.message_set_wire_format) = true;
+    optional int32 x = 1;
+}
+
+message M3 {
+    option (protobuf.MessageOptions.message_set_wire_format) = true;
+    extensions 1 to max;
+    extensions 0x7fffffff;
+}
+
+extend M3 {
+    optional M1 m1 = 1;
+    repeated M2 m2 = 2;
+    optional int32 m3 = 3;
+
+    map<string, string> m4 = 4;
+
+    optional M3 m5 = 0x7fffffff;
+    optional M3 m6 = 0xffffffff;
+}

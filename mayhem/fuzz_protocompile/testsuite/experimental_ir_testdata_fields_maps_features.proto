@@ -1,0 +1,13 @@
+//% descriptor: true
+edition = "2023";
+
+package test;
+
+option features.utf8_validation = NONE;
+
+message Foo {
+    map<int32, int32> foo = 1;
+    map<string, int32> bar = 2;
+    map<string, int32> baz = 3 [features.utf8_validation = VERIFY];
+}
+

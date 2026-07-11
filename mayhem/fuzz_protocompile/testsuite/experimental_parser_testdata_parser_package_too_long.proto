@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package thispathhas102components
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a
+    .a.a.a.a.a.a.a.a.a.a.x;

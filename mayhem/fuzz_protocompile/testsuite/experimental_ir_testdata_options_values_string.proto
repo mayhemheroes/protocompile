@@ -1,0 +1,26 @@
+//% descriptor: true
+syntax = "proto2";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+option (x) = {
+    s: ["", "foo", "foo bar" 'baz', '🐈‍⬛', "\xff"]
+    b: ["", "foo", "foo bar" 'baz', '🐈‍⬛', "\xff"]
+
+    s: -"neg"
+
+    // Type-checking errors.
+    s: [1, 1.0, true, inf, nan, {}, [], 0 to 1]
+    b: [1, 1.0, true, inf, nan, {}, [], 0 to 1]
+};
+
+message Foo {
+    repeated string s = 1;
+    repeated bytes b = 2;
+}
+
+extend google.protobuf.FileOptions {
+    optional Foo x = 1000;
+}

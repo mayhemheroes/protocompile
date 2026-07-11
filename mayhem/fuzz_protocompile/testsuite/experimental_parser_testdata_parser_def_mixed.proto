@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package test;
+
+message Foo [foo=bar] {
+    enum Foo [foo=bar] {}
+    oneof Foo [foo=bar] {}
+}
+extend bar.Foo [foo=bar] {}
+
+service FooService [foo=bar] {}
+
+message Foo = 1 {
+    enum Foo = 1 {}
+    oneof Foo = 1 {}
+}
+extend bar.Foo = 1 {}
+
+service FooService = 1 {}
+
+message Foo(X) returns (X) {
+    enum Foo(X) returns (X) {}
+    oneof Foo(X) returns (X) {}
+}
+extend bar.Foo(X) returns (X) {}
+
+service FooService(X) returns (X) {}
+
+message Foo = "bar" {}

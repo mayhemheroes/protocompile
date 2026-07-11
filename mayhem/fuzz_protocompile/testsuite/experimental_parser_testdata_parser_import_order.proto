@@ -1,0 +1,10 @@
+edition = "2024";
+
+package test;
+
+import "foo.proto";
+import "bar.proto";
+import weak "weak.proto";
+import option "baz.proto";
+import option "bang.proto";
+import "wrong.proto";

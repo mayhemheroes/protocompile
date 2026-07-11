@@ -1,0 +1,35 @@
+//% descriptor: true
+syntax = "proto2";
+
+package test;
+
+message Foo {
+    extensions 1 to max;
+
+    message Foo {
+        extensions 1 to max;
+    }
+
+    extend Foo {
+        optional int32 x1 = 1;
+        optional Foo x2 = 2;
+    }
+
+    extend test.Foo {
+        repeated .test.Foo x3 = 3;
+    }
+
+    extend .test.Foo {
+        repeated test.Foo x4 = 4;
+    }
+}
+
+extend Foo {
+    optional int32 x5 = 5;
+    optional Foo x6 = 6;
+}
+
+extend Foo.Foo {
+    optional int32 x7 = 7;
+    optional Foo x8 = 8;
+}

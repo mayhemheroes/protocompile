@@ -1,0 +1,5 @@
+edition;
+
+syntax = ;
+
+package test;

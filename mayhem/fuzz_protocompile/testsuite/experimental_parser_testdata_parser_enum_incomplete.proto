@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package test;
+
+enum E {
+    NO_TAG;
+    NO_TAG2
+}

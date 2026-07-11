@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package test;
+
+message M {
+    optional int32 y0 = 1;
+    optional int32 y1 = 2;
+    optional int32 y2 = 2;
+
+    // Validate that we do not get an error for overlapping invalid numbers.
+    optional int32 z1 = -1;
+    optional int32 z2 = -1;
+}
+
+enum E {
+    Y0 = 1;
+    Y1 = 2;
+    Y2 = 2;
+}
+
+enum Alias {
+    option allow_alias = true;
+    A0 = 1;
+    A1 = 2;
+    A2 = 2;
+}

@@ -1,0 +1,10 @@
+//% descriptor: true
+syntax = "proto2";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+message Foo {
+    option (google.protobuf.MessageOptions.deprecated) = true;
+}

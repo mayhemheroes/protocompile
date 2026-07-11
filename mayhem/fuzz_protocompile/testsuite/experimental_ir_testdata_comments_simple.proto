@@ -1,0 +1,12 @@
+//% descriptor: true
+//% source_code_info: true
+edition = "2023";
+
+package buf.test;
+
+// Leading comment for buf.test.Foo
+message Foo { // Trailing comment for buf.test.Foo
+  // Leading comment for buf.test.Foo.bar
+  string bar = 1;
+  // Trailing comment for buf.test.Foo.bar
+}

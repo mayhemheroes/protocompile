@@ -1,0 +1,52 @@
+//% descriptor: true
+//% symtab: true
+edition = "2023";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+option features.(x) = {a: true, b: true, c: true, d: true, e: true, f: true};
+
+extend google.protobuf.FeatureSet {
+    Features x = 9995;
+}
+
+message Features {
+    bool a = 1 [
+        edition_defaults = {edition: EDITION_LEGACY, value: "false"},
+        feature_support.edition_introduced = EDITION_2023
+    ];
+
+    bool b = 2 [
+        edition_defaults = {edition: EDITION_LEGACY, value: "false"},
+        feature_support.edition_introduced = EDITION_2023,
+        feature_support.edition_deprecated = EDITION_2023,
+        feature_support.deprecation_warning = "This is a bad feature. Don't use it."
+    ];
+
+    bool c = 3 [
+        edition_defaults = {edition: EDITION_LEGACY, value: "false"},
+        feature_support.edition_introduced = EDITION_2023,
+        feature_support.edition_removed = EDITION_2023
+    ];
+
+    bool d = 4 [
+        edition_defaults = {edition: EDITION_LEGACY, value: "false"},
+        feature_support.edition_introduced = EDITION_2024
+    ];
+
+    bool e = 5 [
+        edition_defaults = {edition: EDITION_LEGACY, value: "false"},
+        feature_support.edition_introduced = EDITION_2023,
+        feature_support.edition_deprecated = EDITION_2023,
+        feature_support.edition_removed = EDITION_2024
+    ];
+
+    bool f = 6 [
+        edition_defaults = {edition: EDITION_LEGACY, value: "false"},
+        feature_support.edition_introduced = EDITION_PROTO3,
+        feature_support.edition_deprecated = EDITION_PROTO3,
+        feature_support.edition_removed = EDITION_2023
+    ];
+}

@@ -1,0 +1,19 @@
+//% descriptor: true
+syntax = "proto2";
+
+package buf.test;
+
+option java_package = "build.buf.protocompile";
+option java_multiple_files = true;
+
+message Foo {
+    option deprecated = true;
+    option deprecated = true;
+    optional Foo foo = 1 [lazy = true];
+    optional int32 bar = 2 [default = 42];
+}
+
+enum Bar {
+    option deprecated = true;
+    BAR_ZERO = 0 [deprecated = true];
+}

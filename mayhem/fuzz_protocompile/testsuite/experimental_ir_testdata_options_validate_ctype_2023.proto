@@ -1,0 +1,17 @@
+edition = "2023";
+
+package buf.test;
+
+message M {
+    string foo = 1 [ctype = STRING];
+    string bar = 2 [ctype = CORD];
+    string baz = 3 [ctype = STRING_PIECE];
+
+    int32 i = 4 [ctype = CORD];
+
+    extensions 5;
+}
+
+extend M {
+    string x = 5 [ctype = CORD];
+}

@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+package test;
+
+message M {
+    optional Type path.name = 1;
+    repeated Type path.name = 1;
+    required Type path.name = 1;
+    Type path.name = 1;
+    Type path/name = 1;
+
+    optional package.Type path.name = 1;
+    repeated package.Type path.name = 1;
+    required package.Type path.name = 1;
+    package.Type name = 1;
+    package/Type name = 1;
+    optional package/Type path.name = 1;
+
+    optional (foo.bar).Type name = 1;
+    repeated (foo.bar).Type name = 1;
+    required (foo.bar).Type name = 1;
+    (foo.bar).Type name = 1;
+
+    optional package.Type (foo.bar).name = 1;
+    repeated package.Type (foo.bar).name = 1;
+    required package.Type (foo.bar).name = 1;
+    package.Type (foo.bar).name = 1;
+
+    (foo) (bar) = 1;
+
+    map<string, foo.(bar)> foo = 1;
+    map<string, foo/bar> foo = 1;
+}

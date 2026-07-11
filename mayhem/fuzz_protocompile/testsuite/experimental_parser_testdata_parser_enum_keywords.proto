@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package test;
+
+enum E {
+    // This is only a test for keywords that can start a production.
+    syntax = 1;
+    edition = 2;
+    import = 3;
+    package = 4;
+    option = 5;
+    message = 6;
+    enum = 7;
+    service = 8;
+    extend = 9;
+    group = 10;
+    oneof = 11;
+    map = 12;
+    extensions = 13;
+    reserved = 14;
+    rpc = 15;
+}

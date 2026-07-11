@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+message Foo {
+    option (x).z = 42;
+    option (y).z = 42;
+    option (z).z = 42;
+
+    optional int32 z = 1;
+}
+
+extend google.protobuf.MessageOptions {
+    repeated int32 x = 1000;
+    repeated Foo y = 1001;
+    optional Foo z = 1002;
+}

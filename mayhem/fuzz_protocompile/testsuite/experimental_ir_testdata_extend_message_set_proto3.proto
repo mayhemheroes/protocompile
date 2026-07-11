@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package test;
+
+message M1 {
+    option message_set_wire_format = true;
+    extensions 1 to max;
+}

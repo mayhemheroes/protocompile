@@ -1,0 +1,3 @@
+syntax = "proto" "2";
+
+package test;

@@ -1,0 +1,64 @@
+// This test exercises every delimited list production in the language.
+
+option foo = [];
+option foo = [1];
+option foo = [1, 2];
+option foo = [1, 2 3];
+option foo = [1, 2,, 3];
+option foo = [1, 2,, 3,];
+option foo = [,1 2,, 3,];
+option foo = [1; 2; 3];
+option foo = [a {}];
+option foo = [,];
+
+option foo = {
+    bar: 1
+    bar {
+        bar: 2;;
+    }
+};
+option foo = {;bar: 1};
+option foo = {baz: 1;; baz: 1};
+option foo = {baz: 1,; baz: 1;};
+option foo = {
+    bar {;}
+    bar {,}
+};
+
+service S {
+    rpc Foo(int) returns (int);
+    rpc Foo(int, int) returns (int, int);
+    rpc Foo(int int) returns (int int);
+    rpc Foo(int; int) returns (int, int,);
+    rpc Foo(, int, int) returns (int,, int,);
+    rpc Foo(;) returns (,);
+    rpc Foo() returns ();
+}
+
+message M {
+    map<int> x;
+    map<int, int> x;
+    map<int int> x;
+    map<int,, int> x;
+    map<,> x;
+    map<> x;
+    map<,int, int> x;
+    map<int; int> x;
+    map<
+        int,
+        int,
+    > x;
+
+    reserved;
+    reserved 1;
+    reserved 1, 2 3;
+    reserved 1, 2,, 3;
+    reserved 1, 2,, 3,;
+    reserved ,1 2,, 3,;
+    reserved a {};
+    reserved ,;
+
+    reserved a, b c;
+    reserved a, b c
+    message Foo {}
+}

@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package test;
+
+service Foo {
+    rpc Bar1(foo.Bar) returns (foo.Bar) [not.(allowed).here = 42];
+    rpc Bar2(foo.Bar) returns (foo.Bar) {
+        option (allowed).here = 42;
+    }
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package test;
+
+message M2 {
+  optional string a = 1;
+  required int64 b = 2;
+  repeated bool c = 3;
+}

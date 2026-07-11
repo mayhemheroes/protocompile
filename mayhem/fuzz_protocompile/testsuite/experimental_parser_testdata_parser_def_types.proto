@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package test;
+
+message MyMessage {}
+
+enum MyEnum {}
+
+extend MyMessage {}
+extend test.MyMessage {}
+extend .test.MyMessage {}
+
+service MyService {}

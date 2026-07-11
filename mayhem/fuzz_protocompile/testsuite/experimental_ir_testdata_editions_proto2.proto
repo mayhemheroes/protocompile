@@ -1,0 +1,23 @@
+//% descriptor: true
+//% symtab: true
+syntax = "proto2";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+option features = {};
+
+message Message {
+    option features = {};
+    optional int32 x = 1 [features.field_presence = IMPLICIT];
+    oneof y {
+        option features = {};
+        int32 z = 2 [(google.protobuf.FieldOptions.features) = {}];
+    }
+}
+
+enum Enum {
+    option features = {};
+    X = 1 [features = {}];
+}

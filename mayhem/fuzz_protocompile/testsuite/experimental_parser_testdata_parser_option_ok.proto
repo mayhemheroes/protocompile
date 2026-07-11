@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package test;
+
+option foo = 1;
+option bar.baz = 2;
+option (foo.bar).baz = 3;
+option foo.(bar.baz).foo = 4;
+
+message Foo {
+    int32 x = 1 [
+        foo = 1,
+        bar.baz = 2,
+        (foo.bar).baz = 3,
+        foo.(bar.baz).foo = 4
+    ];
+}

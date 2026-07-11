@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package test;
+
+option x = 0u;
+option x = 0U;
+option x = 42i32;
+
+option x = {
+    r: r"""x""",
+    b: br"""x""",
+    b: bR'''x''',
+    w: '''x''',
+
+    k: r"x",
+    j: b"",
+
+    x: r"" b"""""",
+};

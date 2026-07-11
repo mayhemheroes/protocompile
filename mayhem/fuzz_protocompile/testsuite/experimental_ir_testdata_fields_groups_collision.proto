@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package test;
+
+message Message {
+    optional group FooBar = 1 {}
+    message FooBar {}
+}
+
+message field {
+    optional group FooBar = 1 {}
+    optional int32 foobar = 2;
+}
+
+message Groups {
+    optional group foo = 1 {}
+
+    optional group FooBar = 2 {}
+    optional group foobar = 3 {}
+}

@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package test;
+
+message M {
+    optional optional M x1 = 1;
+    repeated optional M x2 = 2;
+    required optional M x3 = 3;
+    repeated repeated M x4 = 4;
+    repeated stream M x5 = 5;
+    stream stream M x6 = 6;
+}
+
+service S {
+    rpc X1(required optional M) returns (stream optional M) {}
+    rpc X2(repeated repeated test.M) returns (repeated stream .test.M) {}
+    rpc X3(stream stream .test.M) returns (stream repeated M) {}
+
+    rpc X4(required optional M) returns stream optional M {}
+    rpc X5(repeated repeated test.M) returns repeated stream .test.M {}
+    rpc X6(stream stream .test.M) returns stream repeated M {}
+}

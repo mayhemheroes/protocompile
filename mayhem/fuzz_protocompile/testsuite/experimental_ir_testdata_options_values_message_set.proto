@@ -1,0 +1,33 @@
+//% requires_no_message_set_support: true
+syntax = "proto2";
+
+package test;
+
+import "google/protobuf/descriptor.proto";
+
+message MessageSet {
+    option message_set_wire_format = true;
+    extensions 1 to max;
+}
+
+message Foo {
+    extend MessageSet {
+        optional Foo message_set_field = 12345;
+    }
+    optional string name = 1;
+}
+
+extend google.protobuf.FileOptions {
+    optional MessageSet m1 = 10101;
+    optional MessageSet m2 = 10102;
+}
+
+// Using a message-set extension as an option path is rejected.
+option (m1).(Foo.message_set_field).name = "abc";
+
+// Using a message-set extension inside a message literal is also rejected.
+option (m2) = {
+    [test.Foo.message_set_field] {
+        name: "abc"
+    }
+};

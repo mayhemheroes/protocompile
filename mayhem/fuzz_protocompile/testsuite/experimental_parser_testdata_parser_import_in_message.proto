@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package test;
+
+message M {
+    import "foo.proto";
+    import public "foo.proto";
+    import weak "foo.proto";
+
+    import foo.proto;
+}

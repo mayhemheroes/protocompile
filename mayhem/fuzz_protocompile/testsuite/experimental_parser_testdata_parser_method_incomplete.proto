@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package test;
+
+service Foo {
+    rpc Bar1(foo.Bar) returns foo.Bar;
+    rpc Bar2(foo.Bar);
+    rpc Bar3 returns (foo.Bar);
+    rpc Bar4(foo.Bar) returns () {}
+    rpc Bar5() returns (stream foo.Bar);
+    rpc Bar6() returns;
+    rpc Bar7() returns stream foo.Bar;
+}

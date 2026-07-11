@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package buf.test;
+
+message M {
+    int32 x = 1 [default = 42];
+}

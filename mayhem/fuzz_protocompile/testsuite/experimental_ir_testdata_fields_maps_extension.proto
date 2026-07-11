@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package test;
+
+message Foo {
+    extensions 1;
+}
+
+extend Foo {
+    map<int32, int32> m = 1;
+}

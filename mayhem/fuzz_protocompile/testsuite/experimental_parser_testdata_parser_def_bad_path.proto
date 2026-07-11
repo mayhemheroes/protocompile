@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package test;
+
+message foo.Bar {
+    oneof foo.Bar {}
+    oneof foo.(bar.baz).Bar {}
+}
+message foo.(bar.baz).Bar {}
+
+enum foo.Bar {}
+enum foo.(bar.baz).Bar {}
+
+extend foo.Bar {}
+extend foo.(bar.baz).Bar {}
+
+service foo.Bar {}
+service foo.(bar.baz).Bar {}

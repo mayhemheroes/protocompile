@@ -1,0 +1,11 @@
+//% descriptor: true
+syntax = "proto3";
+
+package test;
+
+message M {
+    message N {}
+    message M {
+        M.N n = 1;
+    }
+}

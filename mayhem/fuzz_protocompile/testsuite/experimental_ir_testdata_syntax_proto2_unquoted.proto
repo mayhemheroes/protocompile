@@ -1,0 +1,4 @@
+//% descriptor: true
+syntax = proto2;
+
+package buf.test;

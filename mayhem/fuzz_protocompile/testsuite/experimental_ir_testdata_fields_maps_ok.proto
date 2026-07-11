@@ -1,0 +1,13 @@
+//% descriptor: true
+//% source_code_info: true
+syntax = "proto3";
+
+package test;
+
+message Foo {
+    map<int32, int32> foo = 1;
+    map<string, Foo> bar = 2;
+
+    map<int32, int32> __foo2__ = 3;
+    map<int32, int32> __foo_3__ = 4;
+}

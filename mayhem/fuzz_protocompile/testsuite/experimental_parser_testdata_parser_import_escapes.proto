@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+package test;
+
+import "foo\x2eproto";
+import "bar" ".proto";

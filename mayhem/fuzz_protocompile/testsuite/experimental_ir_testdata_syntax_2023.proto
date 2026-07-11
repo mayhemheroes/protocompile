@@ -1,0 +1,4 @@
+//% descriptor: true
+edition = "2023";
+
+package buf.test;

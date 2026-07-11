@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package test;
+
+message Foo {
+    reserved 5, "foo";
+    reserved "foo", 5;
+    reserved 5, "foo", 5;
+    reserved "foo", 5, "foo";
+    reserved 5, "foo", 5, "foo", 5, 5;
+}

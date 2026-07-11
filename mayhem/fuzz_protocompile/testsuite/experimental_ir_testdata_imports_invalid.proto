@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package buf.test;
+
+import "";
+import "/root.proto";
+import "does_not_exist.proto";

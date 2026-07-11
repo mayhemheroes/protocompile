@@ -1,0 +1,9 @@
+project: protocompile
+target: fuzz_protocompile
+cmds:
+  - cmd: /mayhem/fuzz_protocompile
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_protocompile.dict
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_protocompile/testsuite

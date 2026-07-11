@@ -1,0 +1,13 @@
+//% descriptor: true
+// Regression test: 2-char [A-Z][a-z] enum values should not produce a false
+// JSON name collision (bufbuild/buf#4474).
+syntax = "proto3";
+
+package buf.test;
+
+enum Foo {
+  FOO_UNSPECIFIED = 0;
+  Ab = 1;
+  Xq = 2;
+  Yz = 3;
+}

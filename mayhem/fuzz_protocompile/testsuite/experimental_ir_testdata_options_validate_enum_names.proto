@@ -1,0 +1,16 @@
+//% descriptor: true
+
+// Regression: camelCase and snake_case enum values that look similar
+// must not collide. Canonical name uses underscore-only word splitting,
+// so "fooBar" stays one word ("Foobar") while "foo_bar" splits into
+// two ("FooBar").
+
+syntax = "proto3";
+
+package buf.test;
+
+enum E {
+    E_UNSPECIFIED = 0;
+    foo_bar = 1;
+    fooBar = 2;
+}

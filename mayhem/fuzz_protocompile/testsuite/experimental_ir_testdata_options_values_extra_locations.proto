@@ -1,0 +1,49 @@
+//% descriptor: true
+//% source_code_info: true
+//% generate_extra_option_locations: true
+syntax = "proto2";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+option (x) = {
+    b: 1,
+    c: 2,
+    c: 3,
+    c: 4
+};
+
+message Foo {
+    option (y) = {
+        a: "foo"
+    };
+
+    optional string bar = 1 [
+      (z) = {
+          a: "bar",
+          b: 5,
+          c: 6,
+          c: 7,
+          c: 8
+      }
+    ];
+}
+
+message OptionMessage {
+    optional string a = 1;
+    optional int32 b = 2;
+    repeated int32 c = 3;
+}
+
+extend google.protobuf.FileOptions {
+    optional OptionMessage x = 1000;
+}
+
+extend google.protobuf.MessageOptions {
+    optional OptionMessage y = 1000;
+}
+
+extend google.protobuf.FieldOptions {
+    optional OptionMessage z = 1000;
+}

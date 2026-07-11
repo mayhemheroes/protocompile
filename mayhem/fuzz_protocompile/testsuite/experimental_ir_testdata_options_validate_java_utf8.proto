@@ -1,0 +1,5 @@
+edition = "2023";
+
+package buf.test;
+
+option java_string_check_utf8 = true;

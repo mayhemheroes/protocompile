@@ -1,0 +1,4 @@
+//% descriptor: true
+edition = proto2;
+
+package buf.test;

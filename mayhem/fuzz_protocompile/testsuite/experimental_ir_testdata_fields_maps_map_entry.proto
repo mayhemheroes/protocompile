@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package test;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MessageOptions {
+    optional google.protobuf.MessageOptions options = 10000;
+    optional int32 map_entry = 10001;
+}
+
+message Foo {
+    option map_entry = true;
+
+    // This is silly but valid and must be accepted.
+    option (options).map_entry = true;
+    option (map_entry) = 42;
+}

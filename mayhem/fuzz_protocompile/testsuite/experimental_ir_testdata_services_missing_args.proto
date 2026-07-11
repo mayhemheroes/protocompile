@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package buf.test;
+
+message M {}
+service S {
+    rpc M1(M) returns ();
+    rpc M2() returns (M);
+}

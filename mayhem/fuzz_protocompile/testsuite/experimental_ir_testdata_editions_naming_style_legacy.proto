@@ -1,0 +1,17 @@
+//% descriptor: true
+//% symtab: true
+edition = "2024";
+
+package buf.test;
+
+option features.enforce_naming_style = STYLE_LEGACY;
+
+message my_message {
+  string myField = 1;
+  int32 AnotherField = 2;
+}
+
+enum my_enum {
+  unspecified = 0;
+  valueOne = 1;
+}

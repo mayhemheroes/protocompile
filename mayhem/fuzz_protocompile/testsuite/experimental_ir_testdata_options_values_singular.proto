@@ -1,0 +1,27 @@
+//% descriptor: true
+syntax = "proto2";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+option (x) = {
+    x1: 1,
+    x1: 2, // Setting more than once is an error.
+
+    x2: [-1, 1], // Setting from an array is an error.
+
+    x3: -1,
+    x3: [0, "foo"], // Setting more than once with an array is an error,
+                    // and doing so still triggers type checking.
+};
+
+message Foo {
+    optional int32 x1 = 1;
+    optional int32 x2 = 2;
+    optional int32 x3 = 3;
+}
+
+extend google.protobuf.FileOptions {
+    optional Foo x = 1000;
+}

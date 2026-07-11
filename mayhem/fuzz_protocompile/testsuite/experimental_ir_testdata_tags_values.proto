@@ -1,0 +1,48 @@
+syntax = "proto2";
+
+package test;
+
+enum E {
+    UNKNOWN = 0;
+    X = 1;
+    Y = 2;
+    Y2 = 2;
+
+    Z1 = -1;
+    Z2 = 0x7fffffff;
+    Z3 = -0x80000000;
+    Z4 = 0x80000000;
+    Z5 = -0x80000001;
+    Z6 = 0xffffffffffffffffffffffffffffffff;
+
+    F1 = 1.0;
+    F2 = -1.0;
+    F3 = inf;
+    F4 = -inf;
+    F5 = nan;
+    F6 = -nan;
+
+    B1 = false;
+    B2 = true;
+    B3 = max;
+
+    S1 = "";
+    S2 = '';
+    S3 = "abc";
+    S4 = '\xff\xff\xff';
+
+    M1 = {};
+    M2 = [];
+    M3 = 1 to 2;
+    M4 = a: 2;
+    M5 = a = 2;
+
+    E1 = X;
+    E2 = -Y;
+}
+
+enum Aliased {
+    option allow_alias = true;
+    X1 = 1;
+    X2 = 1;
+}

@@ -1,0 +1,20 @@
+//% descriptor: true
+//% symtab: true
+edition = "2023";
+
+package buf.test;
+
+import "google/protobuf/cpp_features.proto";
+
+option features.field_presence = IMPLICIT;
+option features.(pb.cpp).legacy_closed_enum = false;
+
+message M {
+    repeated int32 x = 1 [features.repeated_field_encoding = PACKED];
+    int32 y = 2 [features.field_presence = LEGACY_REQUIRED];
+    E z = 3;
+}
+
+enum E {
+    Z = 0;
+}

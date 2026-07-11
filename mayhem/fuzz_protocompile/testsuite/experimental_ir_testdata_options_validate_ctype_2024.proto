@@ -1,0 +1,9 @@
+edition = "2024";
+
+package buf.test;
+
+message M {
+    string foo = 1 [ctype = STRING];
+    string bar = 2 [ctype = CORD];
+    string baz = 3 [ctype = STRING_PIECE];
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package test;
+
+option x = 0b1100101;
+option x = 0B1010101;
+option x = 0o1234567;
+option x = 0O1234567;
+
+option x = 0x10203.4;
+option x = 0X12.ffP10;

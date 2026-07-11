@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package test;
+
+import my.Proto;
+import weak my.Proto;
+import public my.Proto;

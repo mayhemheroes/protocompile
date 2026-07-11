@@ -1,0 +1,19 @@
+//% descriptor: true
+syntax = "proto3";
+
+package test;
+
+message Foo {
+    message Bar {}
+
+    optional Foo foo = 1;
+    Bar bar = 2;
+
+    repeated Foo.Bar bars = 3;
+    repeated test.Foo foos = 4;
+
+    oneof baz {
+        .test.Foo foo0 = 5;
+        .test.Foo.Bar bar0 = 6;
+    }
+}

@@ -1,0 +1,25 @@
+edition = "2023";
+
+package buf.test;
+
+message M {
+    enum E { Z = 0; }
+
+    int32 o1 = 1 [features.repeated_field_encoding = PACKED];
+    int32 o2 = 2 [features.repeated_field_encoding = EXPANDED];
+    
+    repeated M m1 = 3 [features.repeated_field_encoding = PACKED];
+    repeated M m2 = 4 [features.repeated_field_encoding = EXPANDED];
+
+    repeated E e1 = 5 [features.repeated_field_encoding = PACKED];
+    repeated E e2 = 6 [features.repeated_field_encoding = EXPANDED];
+
+    repeated float f1 = 7 [features.repeated_field_encoding = PACKED];
+    repeated float f2 = 8 [features.repeated_field_encoding = EXPANDED];
+
+    repeated float f3 = 9 [packed = true];
+    repeated float f4 = 10 [packed = false];
+
+    repeated string s1 = 11 [features.repeated_field_encoding = PACKED];
+    repeated string s2 = 12 [features.repeated_field_encoding = EXPANDED];
+}

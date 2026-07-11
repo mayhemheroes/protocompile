@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+message int32 {
+    extensions 1 to 4 [
+        declaration = {
+            number: 1,
+            full_name: ".x1",
+            type: ".int32"
+        },
+        declaration = {
+            number: 2,
+            full_name: ".x2",
+            type: ".int32"
+        },
+        declaration = {
+            number: 3,
+            full_name: ".y1",
+            type: "int32"
+        },
+        declaration = {
+            number: 4,
+            full_name: ".y2",
+            type: "int32"
+        }
+    ];
+}
+
+extend .int32 {
+    optional .int32 x1 = 1;
+    optional int32 x2 = 2;
+    optional .int32 y1 = 3;
+    optional int32 y2 = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package buf.test;
+
+message M {
+    optional group G1 = 1 [lazy = true] {};
+    optional group G2 = 2 [lazy = false] {};
+}

@@ -1,0 +1,19 @@
+edition = "2023";
+
+package test;
+
+message Foo {
+    required int32 a = 1;
+    optional int32 a = 1;
+    repeated int32 a = 1;
+    int32 a = 1;
+    map<int32, int32> a = 1;
+
+    oneof bar {
+        required int32 a = 1;
+        optional int32 a = 1;
+        repeated int32 a = 1;
+        int32 a = 1;
+        map<int32, int32> a = 1;
+    }
+}

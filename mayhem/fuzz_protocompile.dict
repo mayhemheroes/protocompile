@@ -1,0 +1,87 @@
+# libFuzzer dictionary for Protocol Buffers .proto source (protocompile FuzzProtoCompile target).
+# Keywords, declarations, scalar types, and structural tokens of the .proto grammar (proto2,
+# proto3, and editions) to help the fuzzer build well-formed .proto faster.
+
+# syntax / edition
+"syntax"
+"\"proto2\""
+"\"proto3\""
+"edition"
+"\"2023\""
+
+# top-level declarations
+"package"
+"import"
+"public"
+"weak"
+"option"
+"message"
+"enum"
+"service"
+"extend"
+"extensions"
+"reserved"
+"oneof"
+"map"
+"group"
+"rpc"
+"returns"
+"stream"
+
+# field labels
+"optional"
+"required"
+"repeated"
+
+# scalar types
+"double"
+"float"
+"int32"
+"int64"
+"uint32"
+"uint64"
+"sint32"
+"sint64"
+"fixed32"
+"fixed64"
+"sfixed32"
+"sfixed64"
+"bool"
+"string"
+"bytes"
+
+# common option names / literals
+"deprecated"
+"packed"
+"default"
+"json_name"
+"allow_alias"
+"true"
+"false"
+"max"
+"to"
+
+# structural tokens
+"{"
+"}"
+"["
+"]"
+"("
+")"
+"<"
+">"
+";"
+","
+"="
+"."
+"/"
+"//"
+"/*"
+"*/"
+"\""
+
+# small skeletons
+"syntax = \"proto3\";"
+"message M {"
+"  string f = 1;"
+"enum E { Z = 0; }"

@@ -1,0 +1,19 @@
+//% descriptor: true
+//% source_code_info: true
+//% exclude: ["required fields are deprecated", "group syntax is deprecated"]
+syntax="proto2";
+
+package buf.test;
+
+// This is a leading comment for message Foo.
+message Foo {
+  // This is considered a trailing comment for message Foo.
+
+  // This is a detached leading comment for synthetic message Group rather than the field.
+
+  // This is a leading for the synthetic message Group rather than the field.
+  required group Group = 1 { // This is a trailing comment for synthetic message Group
+    // This is a leading comment for synthetic field, id.
+    optional string id = 1;
+  } // This comment is dropped.
+}

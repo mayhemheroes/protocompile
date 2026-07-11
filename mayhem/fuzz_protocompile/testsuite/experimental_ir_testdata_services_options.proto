@@ -1,0 +1,26 @@
+//% descriptor: true
+syntax = "proto2";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+message M {}
+
+service S {
+    option deprecated = true;
+    option (x) = 42;
+
+    rpc X(M) returns (M) {
+        option deprecated = true;
+        option (y) = 42;
+    }
+}
+
+extend google.protobuf.ServiceOptions {
+    optional int32 x = 1000;
+}
+
+extend google.protobuf.MethodOptions {
+    optional int32 y = 1000;
+}

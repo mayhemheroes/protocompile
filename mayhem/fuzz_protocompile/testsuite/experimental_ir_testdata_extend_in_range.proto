@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package test;
+
+message M {
+    extensions 1 to 5;
+}
+
+extend M {
+    optional int32 x = 1;
+    optional int32 y = 5;
+    optional int32 z = 20;
+}

@@ -1,0 +1,23 @@
+edition = "2023";
+
+package buf.test;
+
+enum Empty {}
+
+enum Open {
+    Z1 = 0;
+}
+
+enum Closed {
+    option features.enum_type = CLOSED;
+    Z2 = 1;
+}
+
+enum Open1 {
+    Z3 = 1;
+}
+
+enum Open2 {
+    option features.enum_type = OPEN;
+    Z4 = 1;
+}

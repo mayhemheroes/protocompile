@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package test;
+
+message M {
+    M x (T) (T);
+    M x returns (T) (T);
+    M x returns T (T);
+    M x [foo = bar] (T);
+    M x { /* ... */ } (T);
+
+    M x returns (T) returns (T);
+    M x [foo = bar] returns (T);
+    M x { /* ... */ } returns (T);
+
+    M x returns T returns T;
+    M x returns T [] returns T;
+    M x [foo = bar] returns T;
+    M x { /* ... */ } returns T;
+
+    M x = 1 = 1;
+    M x [foo = bar] = 1;
+    M x { /* ... */ } = 1;
+
+    M x [foo = bar] [foo = bar];
+    M x { /* ... */ } [foo = bar];
+}

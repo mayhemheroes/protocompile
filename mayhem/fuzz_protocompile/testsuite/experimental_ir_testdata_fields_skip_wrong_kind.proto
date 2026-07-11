@@ -1,0 +1,12 @@
+//% descriptor: true
+syntax = "proto3";
+
+package test;
+
+message M {
+    message N {}
+    message P {
+        enum X { N = 0; }
+        N n = 1;  // .test.M.N
+    }
+}

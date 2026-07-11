@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package test;
+
+message M {
+    optional Type name = 1;
+    repeated Type name = 1;
+    required Type name = 1;
+    Type name = 1;
+
+    optional .Type name = 1;
+    repeated .Type name = 1;
+    required .Type name = 1;
+    .Type name = 1;
+
+    optional package.Type name = 1;
+    repeated package.Type name = 1;
+    required package.Type name = 1;
+    package.Type name = 1;
+
+    optional .package.Type name = 1;
+    repeated .package.Type name = 1;
+    required .package.Type name = 1;
+    .package.Type name = 1;
+
+    export.Type name = 1;
+    local.Type name = 1;
+
+    export Type name = 1;
+    local Type name = 1;
+}

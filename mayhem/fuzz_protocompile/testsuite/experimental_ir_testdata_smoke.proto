@@ -1,0 +1,16 @@
+//% descriptor: true
+syntax = "proto2";
+
+package buf.test;
+
+message Foo {
+    optional int32 a = 1;
+    optional int32 b = 2;
+    optional int32 c = 3;
+}
+
+enum BAR {
+    BAR_ZERO = 0;
+    BAR_A = 1;
+    BAR_B = 2;
+}

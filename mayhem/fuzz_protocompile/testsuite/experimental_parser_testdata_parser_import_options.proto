@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package test;
+
+import "foo.proto" [(not.allowed) = "here"];
+import weak "weak.proto" [(not.allowed) = "here"];
+import public "public.proto" [(not.allowed) = "here"];

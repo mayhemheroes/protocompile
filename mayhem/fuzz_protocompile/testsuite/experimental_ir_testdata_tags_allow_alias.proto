@@ -1,0 +1,19 @@
+edition = "2023";
+
+package buf.test;
+
+enum NoAlias {
+    A1 = 0;
+    B1 = 0;
+}
+
+enum AllowAlias {
+    option allow_alias = true;
+    A2 = 0;
+    B2 = 0;
+}
+
+enum NeedsAlias {
+    option allow_alias = true;
+    A3 = 0;
+}

@@ -1,0 +1,20 @@
+//% descriptor: true
+//% source_code_info: true
+//% exclude: ["required fields", "group suntax"]
+syntax = "proto2";
+
+package test;
+
+message Foo {
+    optional group FooBar = 1 {
+        option deprecated = true;
+
+        optional int32 x = 1;
+        repeated group X_Y_Z = 2 [deprecated = true] {
+            required group Baz = 3 {}
+        }
+    }
+
+    repeated FooBar x = 2;
+    repeated FooBar.X_Y_Z y = 3;
+}

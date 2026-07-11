@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package test;
+
+message M {
+    // TODO: the diagnostics for this are quite bad...
+	map<string, string x1 = 1;
+}

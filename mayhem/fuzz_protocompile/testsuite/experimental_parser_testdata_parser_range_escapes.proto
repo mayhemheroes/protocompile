@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package test;
+
+message Foo {
+    reserved "foo" "bar";
+    reserved "foo\n", "b\x61r";
+}

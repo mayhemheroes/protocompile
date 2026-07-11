@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package buf.test;
+
+option unknown = 42;
+option go_package.x = 42;
+
+message Foo {
+    option unknown = 42;
+    option deprecated.x = 42;
+    optional Foo foo = 1 [unknown = 42, lazy.x = 42];
+    optional int32 bar = 2 [default.x = 42];
+
+    oneof x {
+        option unknown = 42;
+        int32 baz = 3;
+    }
+}
+
+enum Bar {
+    option unknown = 42;
+    option deprecated.x = 42;
+    BAR_ZERO = 0 [unknown = 42, deprecated.x = 42];
+}

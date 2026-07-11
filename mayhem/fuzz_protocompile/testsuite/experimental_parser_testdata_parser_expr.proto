@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+package test;
+
+option (test.any) = 1;
+option (test.any) = -100;
+option (test.any) = 1 to 100;
+option (test.any) = [1, 2, 3];
+option (test.any) = 
+    "some code here {"
+    "  xyz"
+    "}";
+option (test.any) = {
+    foo: "x"
+    foo.bar: "x",
+    [foo.bar.baz]: "x"
+    foo.bar {},
+    [foo.bar.baz] {
+        1: "x",
+        "foo": "x"
+        1 {
+            "foo" {
+                bar: "x",
+            }
+        }
+    }
+    [foo.bar/MyType]: "x",
+};
+
+option (test.bad) = [1: 2];
+option (test.bad) = {1, 2, 3};
+option (test.bad) = -;
+option (test.bad) = 1 to;

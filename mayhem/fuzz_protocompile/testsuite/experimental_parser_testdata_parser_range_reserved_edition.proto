@@ -1,0 +1,7 @@
+edition = "2023";
+
+package test;
+
+message Foo {
+    reserved foo, "foo";
+}

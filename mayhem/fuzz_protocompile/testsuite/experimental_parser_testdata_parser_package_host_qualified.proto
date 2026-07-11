@@ -1,0 +1,3 @@
+syntax = "proto2";
+
+package buf.build/test.test2;

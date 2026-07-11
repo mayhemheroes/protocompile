@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package test;
+
+enum E {
+    foo.bar = 1;
+    (foo) = 2;
+    foo/bar = 3;
+}

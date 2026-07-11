@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package test;
+
+message Minimal {
+  string name = 1;
+  int32 id = 2;
+  repeated string tags = 3;
+}
+
+enum Color {
+  COLOR_UNKNOWN = 0;
+  COLOR_RED = 1;
+  COLOR_GREEN = 2;
+}

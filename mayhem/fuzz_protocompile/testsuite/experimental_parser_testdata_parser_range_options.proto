@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package test;
+
+message Foo {
+    extensions 1 [(allowed) = true];
+    reserved 1 [(allowed) = false];
+}

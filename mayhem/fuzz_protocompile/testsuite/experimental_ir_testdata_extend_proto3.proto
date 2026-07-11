@@ -1,0 +1,51 @@
+//% descriptor: true
+syntax = "proto3";
+
+package test;
+
+import "google/protobuf/descriptor.proto";
+
+message M {
+    extensions 1;
+}
+
+extend M {
+    int32 x = 1;
+}
+
+extend google.protobuf.FileOptions {
+    repeated int32 a = 1000;
+}
+
+extend google.protobuf.MessageOptions {
+    repeated int32 b = 1000;
+}
+
+extend google.protobuf.FieldOptions {
+    repeated int32 c = 1000;
+}
+
+extend google.protobuf.OneofOptions {
+    repeated int32 d = 1000;
+}
+
+extend google.protobuf.EnumOptions {
+    repeated int32 e = 1000;
+}
+
+extend google.protobuf.EnumValueOptions {
+    repeated int32 f = 1000;
+}
+
+extend google.protobuf.ExtensionRangeOptions {
+    repeated int32 g = 1000;
+}
+
+extend google.protobuf.ServiceOptions {
+    repeated int32 h = 1000;
+}
+
+extend google.protobuf.MethodOptions {
+    repeated int32 i = 1000;
+    optional string j = 1001;
+}

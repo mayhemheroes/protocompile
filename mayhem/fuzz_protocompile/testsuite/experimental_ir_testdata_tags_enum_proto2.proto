@@ -1,0 +1,8 @@
+//% descriptor: true
+syntax = "proto2";
+
+package buf.test;
+
+enum Closed {
+    Z1 = 1;
+}

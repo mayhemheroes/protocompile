@@ -1,0 +1,24 @@
+//% descriptor: true
+edition = "2023";
+
+package buf.test;
+
+import "google/protobuf/descriptor.proto";
+
+option (e).default = "this is not a valid escape: \xff";
+option (e).verify = "this is not a valid escape: \xff";
+option (e).none = "this one is valid here: \xff";
+
+message M {
+    string default = 1;
+    string verify = 2 [
+        features.utf8_validation = VERIFY
+    ];
+    string none = 3 [
+        features.utf8_validation = NONE
+    ];
+}
+
+extend google.protobuf.FileOptions {
+    M e = 1000;
+}

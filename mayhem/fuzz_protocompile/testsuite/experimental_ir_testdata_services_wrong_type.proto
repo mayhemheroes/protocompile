@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package buf.test;
+
+message M {}
+enum E { Z = 0; }
+
+service S {
+    rpc M1(M) returns (E);
+    rpc M2(stream E) returns (M);
+    rpc M3(M) returns (stream int32);
+    rpc M4(stream string) returns (stream N);
+}

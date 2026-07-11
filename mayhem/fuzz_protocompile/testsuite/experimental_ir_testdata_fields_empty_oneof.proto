@@ -1,0 +1,7 @@
+edition = "2023";
+
+package buf.test;
+
+message M {
+    oneof empty {}
+}

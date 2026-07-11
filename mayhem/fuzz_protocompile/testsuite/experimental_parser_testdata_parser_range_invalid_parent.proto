@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package test;
+
+service Foo {
+    extensions 1;
+    reserved 1;
+}
+
+extend Foo {
+    extensions 1;
+    reserved 1;
+}
+
+enum Foo {
+    extensions 1;
+}

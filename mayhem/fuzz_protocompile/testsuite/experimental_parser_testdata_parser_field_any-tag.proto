@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package test;
+
+extend foo.Bar {
+    repeated int32 my_extension = "string-key!";
+
+    int32 x = [a, b, c];
+    int32 x = {a: b};
+    int32 x = 10 to max;
+}

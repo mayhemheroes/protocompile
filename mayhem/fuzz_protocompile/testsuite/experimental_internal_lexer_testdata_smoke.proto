@@ -1,0 +1,17 @@
+//% keywords:
+//%   soft: [syntax, package, message, int64, string]
+//%   hard: ["=", ".", ";", ","]
+//%   bracket: ["(", ")", "[", "]", "{", "}"]
+//%   line_comment: ["//"]
+syntax = "proto3";
+
+package foo.bar;
+
+// This is a doc comment.
+message Foo {
+    int64 x = 1;
+    string y = 2 [
+        (my.option).thing = 0xff,
+        blah = "\0\n\t"
+    ];
+}
